@@ -617,7 +617,7 @@
 
         window.onload = function() {
             if (typeof Pi === 'undefined') { document.getElementById('stSticky').innerText = "❌ Pi SDK not loaded."; document.getElementById('stickyStatus').style.display = 'block'; return; }
-            Pi.init({ version: "2.0", sandbox: true });
+            Pi.init({ version: "2.0", sandbox: false });
             document.getElementById('stSticky').innerText = "✅ Vault Secured. System Ready.";
             document.getElementById('stickyStatus').style.display = 'block';
             document.getElementById('btn-login').disabled = false;
