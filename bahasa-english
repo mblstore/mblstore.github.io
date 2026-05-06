@@ -1,1 +1,11 @@
-
+const en_vault = {
+    sentinel: {
+        title: "THE PI SENTINEL DOSSIER",
+        desc: "A FREE strategic market intelligence primer for the modern Pioneer.",
+        content: "<h3>THE PI SENTINEL DOSSIER</h3><p>Welcome, Pioneer. You are holding one of the most in-depth strategic dossiers...</p>"
+    },
+    echelon: {
+        title: "THE ECHELON BRIEFING PACK",
+        desc: "An advanced education module on Pi, AI, RWA, and global shifts."
+    }
+};
