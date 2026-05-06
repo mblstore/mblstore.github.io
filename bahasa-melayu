@@ -1,1 +1,7 @@
-
+const ms_vault = {
+    sentinel: {
+        title: "DOSSIER PI SENTINEL",
+        desc: "Satu panduan risikan pasaran strategik PERCUMA untuk Pioneer moden.",
+        content: "<h3>DOSSIER PI SENTINEL</h3><p>Selamat datang, Pioneer. Anda sedang memegang salah satu dossier strategik paling eksklusif...</p>"
+    }
+};
