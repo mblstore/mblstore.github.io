@@ -5,22 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MB Legacy Store</title>
     
-    <!-- WAJIB: Tambah Pi SDK Link di sini -->
+    <!-- Pi SDK untuk sambungan akaun -->
     <script src="https://sdk.minepi.com/pi-sdk.js"></script>
     
-    <link rel="stylesheet" href="css/gaya_reka_bentuk.css">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MB Legacy Store</title>
-    
-    <!-- CSS daripada folder css -->
+    <!-- Fail CSS -->
     <link rel="stylesheet" href="css/gaya_reka_bentuk.css">
 </head>
 <body>
 
     <div id="app-interface"></div>
 
-    <!-- Fail Bahasa (Tanpa .js seperti dalam Screenshot) -->
+    <!-- Fail Bahasa -->
     <script src="bahasa-english"></script>
     <script src="bahasa-melayu"></script>
     <script src="bahasa-indon"></script>
@@ -30,30 +25,24 @@
     <script src="bahasa-vietnam"></script>
     <script src="bahasa-filipino"></script>
 
-    <!-- Fail Logik daripada folder js -->
+    <!-- Fail Logik Folder JS -->
     <script src="js/shared.js"></script>
     <script src="js/i18n.js"></script>
 
-    <!-- Fail API untuk Transaksi Pi -->
+    <!-- Fail API & Butang -->
     <script src="api/approve.js"></script>
     <script src="api/complete.js"></script>
-
-    <!-- Fail Butang Utama -->
     <script src="butang"></script>
 
     <script>
         window.onload = function() {
-            // Memanggil visual-kedai
             fetch('visual-kedai')
                 .then(response => response.text())
                 .then(data => {
                     document.getElementById('app-interface').innerHTML = data;
-                    // Memulakan fungsi bahasa daripada fail butang/i18n
-                    if(typeof changeLang === "function") {
-                        changeLang('ms'); 
-                    }
+                    if(typeof changeLang === "function") changeLang('ms');
                 })
-                .catch(err => console.error("Gagal memuatkan visual-kedai:", err));
+                .catch(err => console.error("Ralat visual-kedai:", err));
         };
     </script>
 
