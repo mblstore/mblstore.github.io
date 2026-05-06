@@ -1,1 +1,31 @@
+<!-- Masukkan ini dalam fail visual-kedai -->
+<div class="title-frame">
+    <h1>MB LEGACY STORE</h1>
+    <p class="subtitle">Your Pi, Your Legacy.</p>
+</div>
 
+<div class="lang-selector">
+    <button onclick="switchLanguage('en')">🇬🇧 English</button>
+    <button onclick="switchLanguage('ms')">🇲🇾 Melayu</button>
+    <button onclick="switchLanguage('id')">🇮🇩 Indonesia</button>
+    <button onclick="switchLanguage('zh')">🇨🇳 中文</button>
+    <button onclick="switchLanguage('ko')">🇰🇷 한국어</button>
+    <button onclick="switchLanguage('vi')">🇻🇳 Tiếng Việt</button>
+    <button onclick="switchLanguage('tl')">🇵🇭 Tagalog</button>
+    <button onclick="switchLanguage('ar')">🇸🇦 العربية</button>
+</div>
+
+<hr class="gold-divider">
+
+<div class="treasury-section" id="digital-content">
+    <h2>✦ THE VAULT ✦</h2>
+    <!-- Produk akan dijana oleh fail produk_utama.js -->
+</div>
+
+<div id="productModal" class="modal">
+    <div class="modal-content" id="modalBody"></div>
+</div>
+
+<div class="footer-frame">
+    <p>🔒 SECURITY NOTICE: MB Legacy Store will NEVER ask for your wallet passphrase.</p>
+</div>
