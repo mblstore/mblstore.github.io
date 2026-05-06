@@ -1,1 +1,15 @@
-
+const tl_vault = {
+    sentinel: {
+        title: "PI SENTINEL DOSSIER",
+        desc: "Isang LIBRENG strategic market intelligence primer para sa modernong Pioneer.",
+        content: `<h3>PI SENTINEL DOSSIER</h3>
+<p>Maligayang pagdating, Pioneer. Hawak mo ang isa sa mga pinaka-eksklusibong strategic dossier sa Pi ecosystem. Hindi ito isang pangunahing gabay; ito ang iyong unang intelligence briefcase para sa pag-navigate sa bagong digital economy.</p>
+<h4>1. Ang Bisyon: Ang Masterplan ng mga Tagapagtatag</h4>
+<p>Isang malalimang pagsisid sa pilosopiya nina Dr. Nicolas Kokkalis at Dr. Chengdiao Fan. Unawain kung bakit ang Pi ay hindi lamang isang cryptocurrency, kundi isang kilusan upang i-desentralisa ang pandaigdigang pananalapi.</p>
+<h4>2. Ang Wallet: Ang Iyong Digital Fortress</h4>
+<p>Ang Pi Wallet ay higit pa sa isang lugar upang mag-imbak ng mga barya. Ito ang iyong personal na kuta sa blockchain. Ipinapaliwanag ng ulat na ito ang kritikal na pagkakaiba sa pagitan ng iyong non-custodial wallet at tradisyonal na pagbabangko.</p>
+<h4>3. Ang Estratehiya: Higit pa sa "Mining" Button</h4>
+<p>Inilalahad ng seksyong ito ang sining ng pagpapalawak ng iyong security circle, pagpapatakbo ng Pi Node sa iyong laptop, at pag-unawa kung paano ang iyong pang-araw-araw na pakikipag-ugnayan ay lumilikha ng tunay na utility para sa network.</p>
+<p><strong>Ito ang iyong pundasyon. Sa kaalamang ito, hindi ka na lamang isang user; ikaw ay isang Sentinel ng Pi Network. Pangalagaan ito, ibahagi ito, at buuin ang hinaharap.</strong></p>`
+    }
+};
