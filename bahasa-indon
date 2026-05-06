@@ -1,1 +1,7 @@
-
+const id_vault = {
+    sentinel: {
+        title: "DOSSIER PI SENTINEL",
+        desc: "Panduan intelijen pasar strategis GRATIS untuk Pioneer modern.",
+        content: "<h3>DOSSIER PI SENTINEL</h3><p>Selamat datang, Pioneer. Anda sedang memegang salah satu dokumen strategis paling eksklusif...</p>"
+    }
+};
