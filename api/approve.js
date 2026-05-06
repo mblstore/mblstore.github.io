@@ -1,8 +1,12 @@
 export default async function handler(req, res) {
     if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
 
-    const { paymentId } = req.body;
-    const PI_API_KEY = "MASUKKAN_API_KEY_MAINNET_ANDA"; // Ambil dari Developer Portal
+    const { paymentId, network } = req.body;
+    
+    // Gunakan API Key yang betul mengikut rangkaian
+    const PI_API_KEY = network === 'mainnet' 
+        ? "API_KEY_MAINNET" 
+        : "API_KEY_TESTNET";
 
     try {
         const response = await fetch(`https://api.minepi.com/v2/payments/${paymentId}/approve`, {
