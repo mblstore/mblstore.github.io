@@ -3,9 +3,10 @@ export default async function handler(req, res) {
 
     const { paymentId, txid, network } = req.body;
     
+    // Mengambil API Key dari Vercel Environment Variables secara selamat
     const PI_API_KEY = network === 'mainnet' 
-        ? "API_KEY_MAINNET" 
-        : "API_KEY_TESTNET";
+        ? process.env.PI_API_KEY_MAINNET 
+        : process.env.PI_API_KEY_TESTNET;
 
     try {
         const response = await fetch(`https://api.minepi.com/v2/payments/${paymentId}/complete`, {
@@ -20,6 +21,7 @@ export default async function handler(req, res) {
         const data = await response.json();
         return res.status(200).json(data);
     } catch (error) {
+        console.error("Complete Error:", error);
         return res.status(500).json({ error: "Gagal Complete" });
     }
 }
