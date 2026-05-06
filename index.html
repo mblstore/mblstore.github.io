@@ -557,21 +557,63 @@
         }
 
         function createPayment(amount, memo, btnId) {
-            document.getElementById('stSticky').innerText = "💰 Processing " + amount + " Pi...";
-            document.getElementById('stickyStatus').style.display = 'block';
-            document.getElementById(btnId).disabled = true;
-            Pi.createPayment({ amount: amount, memo: memo, metadata: { id: Date.now().toString() } }, {
-                onReadyForServerApproval: function(paymentId) {
-                    document.getElementById('stSticky').innerText = "⏳ Approving...";
-                    fetch('/api/complete', { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({paymentId:paymentId}) });
-                },
-                onReadyForServerApproval: function(paymentId) {
-    return fetch('/api/approve', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ paymentId: paymentId, network: 'mainnet' })
+    document.getElementById('stSticky').innerText = "💰 Processing " + amount + " Pi...";
+    document.getElementById('stickyStatus').style.display = 'block';
+    document.getElementById(btnId).disabled = true;
+
+    Pi.createPayment({ 
+        amount: amount, 
+        memo: memo, 
+        metadata: { id: Date.now().toString() } 
+    }, {
+        // BAHAGIAN 1: APPROVAL
+        onReadyForServerApproval: function(paymentId) {
+            document.getElementById('stSticky').innerText = "⏳ Approving...";
+            return fetch('/api/approve', { 
+                method: 'POST', 
+                headers: { 'Content-Type': 'application/json' }, 
+                body: JSON.stringify({ paymentId: paymentId, network: 'testnet' }) // Tukar ke 'mainnet' selepas Checklist 10 lulus
+            });
+        },
+
+        // BAHAGIAN 2: COMPLETION (Guna fail complete.js anda)
+        onReadyForServerCompletion: function(paymentId, txid) {
+            document.getElementById('stSticky').innerText = "⚡ Finalizing Transaction...";
+            return fetch('/api/complete', { 
+                method: 'POST', 
+                headers: { 'Content-Type': 'application/json' }, 
+                body: JSON.stringify({ 
+                    paymentId: paymentId, 
+                    txid: txid, 
+                    network: 'testnet' // Tukar ke 'mainnet' selepas Checklist 10 lulus
+                }) 
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('stSticky').innerText = "✅ Payment Successful!";
+                document.getElementById(btnId).disabled = false;
+                
+                // Logik buka kandungan Vault anda
+                if (amount === 1.0) showVaultView('echelon', true);
+                if (amount === 5.0) showVaultView('command', true);
+            })
+            .catch(error => {
+                document.getElementById('stSticky').innerText = "❌ Verification Error.";
+                document.getElementById(btnId).disabled = false;
+            });
+        },
+
+        onCancel: function(paymentId) {
+            document.getElementById('stSticky').innerText = "Transaction Cancelled.";
+            document.getElementById(btnId).disabled = false;
+        },
+        
+        onError: function(error, payment) {
+            document.getElementById('stSticky').innerText = "An error occurred.";
+            document.getElementById(btnId).disabled = false;
+        }
     });
-},
+        }
 
         window.onload = function() {
             if (typeof Pi === 'undefined') { document.getElementById('stSticky').innerText = "❌ Pi SDK not loaded."; document.getElementById('stickyStatus').style.display = 'block'; return; }
