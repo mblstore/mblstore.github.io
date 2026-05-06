@@ -1,19 +1,52 @@
-// Masukkan ini dalam fail butang
-function switchTab(tab) {
-    const digital = document.getElementById('digital-content');
-    const merchant = document.getElementById('merchant-content');
+// Logik Kawalan Bahasa & Interaksi MB Legacy Store
+
+// Fungsi untuk menukar bahasa secara dinamik
+function changeLang(lang) {
+    let content;
     
-    if (tab === 'digital') {
-        digital.style.display = 'block';
-        if(merchant) merchant.style.display = 'none';
-    } else {
-        digital.style.display = 'none';
-        if(merchant) merchant.style.display = 'block';
+    // Memilih sumber data berdasarkan kod bahasa
+    switch(lang) {
+        case 'ms': content = ms_vault; break;
+        case 'id': content = id_vault; break;
+        case 'en': content = en_vault; break;
+        case 'ar': content = ar_vault; break;
+        case 'zh': content = zh_vault; break;
+        case 'ko': content = ko_vault; break;
+        case 'vi': content = vi_vault; break;
+        case 'tl': content = tl_vault; break;
+        default: content = en_vault;
+    }
+
+    // Mengemaskini tajuk dan senarai produk di paparan utama
+    if (content && content.sentinel) {
+        document.getElementById('vault-title').innerText = "✦ " + content.sentinel.title + " ✦";
+        renderProducts(content);
     }
 }
 
-function showVaultView(type) {
+// Fungsi untuk memaparkan senarai produk (Dossier, Echelon, dsb)
+function renderProducts(data) {
+    const container = document.getElementById('product-list');
+    container.innerHTML = `
+        <div class="product-card" onclick="openModal('sentinel')">
+            <h3>${data.sentinel.title}</h3>
+            <p>${data.sentinel.desc}</p>
+            <button class="golden-btn">VIEW DETAILS</button>
+        </div>
+    `;
+}
+
+// Fungsi untuk membuka modal maklumat produk
+function openModal(type) {
     const modal = document.getElementById('productModal');
     modal.style.display = 'flex';
-    // Kod lanjut untuk paparan modal ada dalam fail bahasa masing-masing
+    // Logik tambahan untuk mengisi kandungan modal akan ditambah kemudian
+}
+
+// Menutup modal apabila klik di luar kawasan kandungan
+window.onclick = function(event) {
+    const modal = document.getElementById('productModal');
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
 }
