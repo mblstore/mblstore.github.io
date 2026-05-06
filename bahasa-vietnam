@@ -1,1 +1,15 @@
-
+const vi_vault = {
+    sentinel: {
+        title: "HỒ SƠ TÌNH BÁO PI",
+        desc: "Sách lược tình báo thị trường miễn phí cho Pioneer hiện đại.",
+        content: `<h3>HỒ SƠ TÌNH BÁO PI</h3>
+<p>Chào mừng, Pioneer. Bạn đang nắm giữ một trong những hồ sơ chiến lược độc quyền nhất trong hệ sinh thái Pi. Đây không phải là một hướng dẫn cơ bản; đây là chiếc cặp tình báo đầu tiên của bạn để định hướng nền kinh tế kỹ thuật số mới.</p>
+<h4>1. Tầm Nhìn: Kế Hoạch Tổng Thể Của Nhà Sáng Lập</h4>
+<p>Đi sâu vào triết lý của Tiến sĩ Nicolas Kokkalis và Tiến sĩ Chengdiao Fan. Hiểu tại sao Pi không chỉ là một loại tiền mã hóa, mà còn là một phong trào nhằm phi tập trung hóa tài chính toàn cầu.</p>
+<h4>2. Ví: Pháo Đài Kỹ Thuật Số Của Bạn</h4>
+<p>Ví Pi không chỉ là nơi lưu trữ đồng xu. Đó là pháo đài cá nhân của bạn trên blockchain. Báo cáo này giải thích sự khác biệt quan trọng giữa ví không lưu ký và ngân hàng truyền thống.</p>
+<h4>3. Chiến Lược: Vượt Xa Nút "Khai Thác"</h4>
+<p>Phần này tiết lộ nghệ thuật mở rộng vòng tròn bảo mật của bạn, chạy Pi Node trên máy tính xách tay để nhận thêm phần thưởng và hiểu cách tương tác hàng ngày của bạn tạo ra tiện ích thực sự cho mạng lưới.</p>
+<p><strong>Đây là nền tảng của bạn. Với kiến thức ini, bạn không còn chỉ là người dùng; bạn là một Sentinel của Mạng Pi. Hãy bảo vệ nó, chia sẻ nó và xây dựng tương lai.</strong></p>`
+    }
+};
