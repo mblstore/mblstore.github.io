@@ -1,1 +1,19 @@
+// Masukkan ini dalam fail butang
+function switchTab(tab) {
+    const digital = document.getElementById('digital-content');
+    const merchant = document.getElementById('merchant-content');
+    
+    if (tab === 'digital') {
+        digital.style.display = 'block';
+        if(merchant) merchant.style.display = 'none';
+    } else {
+        digital.style.display = 'none';
+        if(merchant) merchant.style.display = 'block';
+    }
+}
 
+function showVaultView(type) {
+    const modal = document.getElementById('productModal');
+    modal.style.display = 'flex';
+    // Kod lanjut untuk paparan modal ada dalam fail bahasa masing-masing
+}
