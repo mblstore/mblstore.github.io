@@ -1,7 +1,16 @@
+// Bersihkan fail dan tampal kod ini untuk bahasa-Indon
 const id_vault = {
     sentinel: {
         title: "DOSSIER PI SENTINEL",
         desc: "Panduan intelijen pasar strategis GRATIS untuk Pioneer modern.",
-        content: "<h3>DOSSIER PI SENTINEL</h3><p>Selamat datang, Pioneer. Anda sedang memegang salah satu dokumen strategis paling eksklusif...</p>"
+        content: `<h3>DOSSIER PI SENTINEL</h3>
+<p>Selamat datang, Pioneer. Anda sedang memegang salah satu dokumen strategis paling eksklusif di ekosistem Pi. Ini bukan panduan dasar; ini adalah tas intelijen pertama Anda untuk menavigasi ekonomi digital baru.</p>
+<h4>1. Visi: Cetak Biru Para Pendiri</h4>
+<p>Menyelami filosofi Dr. Nicolas Kokkalis dan Dr. Chengdiao Fan. Pahami mengapa Pi bukan sekadar mata uang kripto, tetapi sebuah gerakan untuk mendesentralisasi keuangan global.</p>
+<h4>2. Dompet: Benteng Digital Anda</h4>
+<p>Dompet Pi lebih dari sekadar tempat menyimpan koin. Ini adalah benteng pribadi Anda di atas blockchain. Laporan ini menjelaskan perbedaan penting antara dompet non-kustodian dan perbankan tradisional.</p>
+<h4>3. Strategi: Melampaui Tombol "Menambang"</h4>
+<p>Bagian ini mengungkap seni memperluas lingkaran keamanan Anda, menjalankan Pi Node di laptop untuk mendapatkan hadiah tambahan, dan memahami bagaimana keterlibatan harian Anda menciptakan utiliti nyata.</p>
+<p><strong>Ini adalah fondasi Anda. Dengan pengetahuan ini, Anda bukan lagi sekadar pengguna; Anda adalah seorang Sentinel Jaringan Pi. Jagalah, bagikan, dan bangun masa depan.</strong></p>`
     }
 };
