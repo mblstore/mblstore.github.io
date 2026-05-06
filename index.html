@@ -565,24 +565,13 @@
                     document.getElementById('stSticky').innerText = "⏳ Approving...";
                     fetch('/api/complete', { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({paymentId:paymentId}) });
                 },
-                onReadyForServerCompletion: function(paymentId, txid) {
-                    isPaymentPending = false;
-                    document.getElementById('stSticky').innerText = "✅ Payment " + amount + " Pi Successful!";
-                    document.getElementById(btnId).disabled = false;
-                    if (amount === 1.0) showVaultView('echelon', true);
-                    if (amount === 5.0) showVaultView('command', true);
-                },
-                onCancel: function() {
-                    document.getElementById('stSticky').innerText = "❌ Cancelled.";
-                    document.getElementById(btnId).disabled = false;
-                },
-                onError: function() {
-                    document.getElementById('stSticky').innerText = "❌ Error.";
-                    document.getElementById(btnId).disabled = false;
-                },
-                onIncompletePaymentFound: onIncompletePaymentFound
-            });
-        }
+                onReadyForServerApproval: function(paymentId) {
+    return fetch('/api/approve', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ paymentId: paymentId, network: 'mainnet' })
+    });
+},
 
         window.onload = function() {
             if (typeof Pi === 'undefined') { document.getElementById('stSticky').innerText = "❌ Pi SDK not loaded."; document.getElementById('stickyStatus').style.display = 'block'; return; }
